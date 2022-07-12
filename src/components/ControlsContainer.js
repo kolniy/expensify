@@ -3,6 +3,8 @@ import { useQuery, gql } from "@apollo/client";
 import FiltersComponent from "./FiltersComponent";
 import ExpensesContainer from "./expenses/ExpensesContainer";
 
+import filterExpensesByUserSelector from "../filterExpensesByUserSelector";
+
 const GET_EXPENSES = gql`
   query {
     allExpenses {
@@ -30,20 +32,19 @@ const ControlsContainer = () => {
   useEffect(() => {
     if (data) {
       const objMap = {};
-      data.allExpenses.forEach((expense) => {
-        let key = expense.createdAt;
-        if (!objMap[key]) {
-          objMap[key] = [];
+      // apply filter function here
+      filterExpensesByUserSelector(data.allExpenses, listFilters).forEach(
+        (expense) => {
+          let key = expense.createdAt;
+          if (!objMap[key]) {
+            objMap[key] = [];
+          }
+          objMap[key].push(expense);
         }
-        objMap[key].push(expense);
-      });
+      );
       setGroupedExpense(Object.entries(objMap));
     }
-  }, [data]);
-
-  useEffect(() => {
-    console.log(listFilters);
-  }, [listFilters]);
+  }, [data, listFilters]);
 
   if (error) return error;
   if (loading) return loading;
