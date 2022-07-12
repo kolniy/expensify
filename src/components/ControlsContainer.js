@@ -20,6 +20,7 @@ const GET_EXPENSES = gql`
 
 const ControlsContainer = () => {
   const [listFilters, setListFilters] = useState({
+    /// used to create a filter, updated by the inputs form controls
     input: "",
     status: "",
     startcost: "100",
@@ -37,12 +38,13 @@ const ControlsContainer = () => {
         (expense) => {
           let key = expense.createdAt;
           if (!objMap[key]) {
+            // group dataset by createdAt timestamp
             objMap[key] = [];
           }
           objMap[key].push(expense);
         }
       );
-      setGroupedExpense(Object.entries(objMap));
+      setGroupedExpense(Object.entries(objMap)); // converts the object of arrays to array of arrays
     }
   }, [data, listFilters]);
 

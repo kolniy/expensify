@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Expensify App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project mimics an expenses tracker utility app, that helps to keep track of user expenses.
 
-## Available Scripts
+## Project dependencies and framework
 
-In the project directory, you can run:
+This project uses the following libraries/dependencies:
 
-### `npm start`
+### `Reactstrap`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Reactstrap is a compoent library for reactjs.
+Its provides inbuilt Bootstrap components that make easy to create UI, used to add basic styling to the expensify app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `graphql apollo client`
 
-### `npm test`
+Used to fetch Data using from our mock graphql server using graphql on the client side
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `json graphql server`
 
-### `npm run build`
+Used to create a Mock graphql server. with dataset from ./src/db.js
+The schema used is define this way:
+{
+id,
+name,
+description,
+status,
+createdAt,
+cost
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## starting the APP in localhost
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can run the App in the following simple steps
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Using Terminal CD into the project directory after downloading or cloning from github.
 
-### `npm run eject`
+2. Run "npm install" to download all the dependencies and libraries.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Run "npm run start-server" to start the mock server on localhost:5000 using the /src/db.js as the dataset.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Run "npm start" to start the client server and open the app localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How it Looks
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![alt text](https://res.cloudinary.com/thawebguy/image/upload/v1657659318/expensify_ff38zt.gif)
 
-## Learn More
+### How to use
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Upon mounting the App displays the filter component and the list of queried expenses.
+Where the user can, filter expenses either by typing the name, description or status of the expenses in the search box Or by using the status dropdown and price range select dropdown to filter expenses that match status or the price range
