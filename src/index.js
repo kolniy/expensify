@@ -6,7 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4500/",
+  uri: "http://localhost:5000/",
   cache: new InMemoryCache(),
 });
 

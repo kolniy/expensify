@@ -16,7 +16,7 @@ const ExpensesContainer = ({ groupedExpense }) => {
         ) : (
           <>
             {groupedExpense
-              .sort((a, b) => {
+              ?.sort((a, b) => {
                 const dateA = parseDateAsStandardDate(a[0]);
                 const dateB = parseDateAsStandardDate(b[0]);
 

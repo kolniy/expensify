@@ -22,8 +22,8 @@ const ControlsContainer = () => {
   const [listFilters, setListFilters] = useState({
     input: "",
     status: "",
-    startcost: "",
-    endcost: "",
+    startcost: "100",
+    endcost: "1000",
   });
 
   const { loading, error, data } = useQuery(GET_EXPENSES);
