@@ -26,7 +26,10 @@
 .expense-list-item {
     width: 100%;
     padding: 10px 5px;
-    border-bottom: 6px solid #f9fafd;
+}
+
+.expense-list-item:not(:last-child) {
+    border-bottom: 10px solid #f9fafd;
 }
 
 .expense-list-item 
@@ -46,6 +49,9 @@
 .expense-list-item__details {
     padding: 10px 35px;
     margin: 19px 0;
+}
+
+.expense-list-item__details:not(:last-child){
     border-bottom: 4px solid #f9fafd;
 }
 
@@ -83,7 +89,7 @@
 }
 
 .expense-list-item__details 
-.expense-status__date-info:not(:last-child) {
+.expense-status__date-info {
     width: 100%;
     display: flex;
     justify-content: space-between;
