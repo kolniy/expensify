@@ -48,8 +48,28 @@ const ControlsContainer = () => {
     }
   }, [data, listFilters]);
 
-  if (error) return error;
-  if (loading) return loading;
+  if (error)
+    return (
+      <p
+        style={{
+          margin: "20px",
+        }}
+        className="text-center"
+      >
+        {error.message}
+      </p>
+    );
+  if (loading)
+    return (
+      <p
+        style={{
+          margin: "20px",
+        }}
+        className="text-center"
+      >
+        loading...
+      </p>
+    );
 
   return (
     <>

@@ -7,6 +7,9 @@ import reportWebVitals from "./reportWebVitals";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/",
+  fetchOptions: {
+    mode: "no-cors",
+  },
   cache: new InMemoryCache(),
 });
 
